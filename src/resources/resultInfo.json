@@ -1,0 +1,92 @@
+{
+    "type" : "FeatureCollection",
+    "crs" : {
+        "type" : "name",
+        "properties" : {
+            "name" : "urn:ogc:def:OGC:1.3:CRS84",
+            "required_fields" : "currency symbol, units of speed, distance and volume (kmph, kilometers, liters etc), timezone(s) information of the loaded region"
+        }
+    },
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "COUNTRY_ID": 123,
+                "COUNTRY_CODE": "IND",
+                "COUNTRY_NAME": "India",
+                "COUNTRY_INFO":"India, country that occupies the greater part of South Asia. Its capital is New Delhi.",
+                "COUNTRY_CURRENCY":"₹ (Rupee)",
+                "UNITS_SPEED" : "kmp/h",
+                "UNITS_DISTANCE": "km (kilometer)",
+                "UNITS_VOLUME": "L (Litre)",
+                "TIMEZONE": "+5:30 UTC",
+                "fact":[
+                    "India, officially the Republic of India, is the 2nd most populous country in the world, after China.",
+                    "India has a total area of 3,287,263 sq km. It is a country in South Asia and has 28 states.",
+                    "The country’s capital state is New Delhi. India has eight union territories.",
+                    "Its official language is Hindi.",
+                    "Largest cities: Mumbai 19.744 million; Kolkata 14.402 million; Chennai 8.784 million; Bangalore 8.614 million; Hyderabad 7.837 million (2011)"
+                ],
+                "images":[
+                    "https://images.pexels.com/photos/2526935/pexels-photo-2526935.jpeg?w=500",
+                    "https://images.pexels.com/photos/3361480/pexels-photo-3361480.jpeg?w=500",
+                    "https://images.pexels.com/photos/894443/pexels-photo-894443.jpeg?w=500"
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "COUNTRY_ID": 124,
+                "COUNTRY_CODE": "USA",
+                "COUNTRY_NAME": "United States of America",
+                "COUNTRY_INFO":"United States, officially United States of America, abbreviated U.S. or U.S.A., byname America, country in North America, a federal republic of 50 states.",
+                "COUNTRY_CURRENCY":"$",
+                "UNITS_SPEED" : "mp/h (miles per hour)",
+                "UNITS_DISTANCE": "ft (feet)",
+                "UNITS_VOLUME": "ounces",
+                "TIMEZONE": "-5:00 UTC",
+                "fact":[
+                    "The U.S. is a country of 50 states covering a vast swath of North America, with Alaska in the northwest and Hawaii extending the nation’s presence into the Pacific Ocean.",
+                    "Major Atlantic Coast cities are New York, a global finance and culture center, and capital Washington, DC",
+                    "Midwestern metropolis Chicago is known for influential architecture and on the west coast, Los Angeles' Hollywood is famed for filmmaking.",
+                    "The United States of America is the world”s third largest country in size (after Russia and Canada)",
+                    "Largest cities (2013 est.): New York, 8,405,837; Los Angeles, 3,884,307; Chicago, 2,718,782; Houston, 2,195,914; Philadelphia, 1,553,165"
+                ],
+                "images":[
+                    "https://images.unsplash.com/photo-1562807324-b9bff08ef33a?w=500",
+                    "https://images.unsplash.com/photo-1562807325-ff9c7051210d?w=500",
+                    "https://images.unsplash.com/photo-1471306224500-6d0d218be372"
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "COUNTRY_ID": 125,
+                "COUNTRY_CODE": "GBR",
+                "COUNTRY_NAME": "United Kingdom",
+                "COUNTRY_INFO":"United Kingdom, island country located off the northwestern coast of mainland Europe.",
+                "COUNTRY_CURRENCY":"£",
+                "UNITS_SPEED" : "mp/h (miles per hour)",
+                "UNITS_DISTANCE": "metric",
+                "UNITS_VOLUME": "imp gal (Imperial Gallon)",
+                "TIMEZONE": "+0 UTC",
+                "fact":[
+                    "The United Kingdom, made up of England, Scotland, Wales and Northern Ireland, is an island nation in northwestern Europe.",
+                    "England – birthplace of Shakespeare and The Beatles – is home to the capital, London, a globally influential centre of finance and culture. England is also site of Neolithic Stonehenge, Bath’s Roman spa and centuries-old universities at Oxford and Cambridge.",
+                    "London has over 170 museums with 11 national museums including the British Museum.",
+                    "In the UK, accents change noticeably every 25 miles (45 km).",
+                    "Largest Cities: London, 13 million, Birmingham, 2.272 million; Manchester, 2.213 million; West Yorkshire, 1.625 million; Glasgow, 1.137 million; Newcastle upon Tyne, 874,000"
+                ],
+                "images":[
+                    "https://images.unsplash.com/photo-1601209657812-e73671d3e3bf?w=500",
+                    "https://images.unsplash.com/photo-1571340448714-4e6ce37296fd?w=500",
+                    "https://images.pexels.com/photos/372490/pexels-photo-372490.jpeg?w=500"
+                ]
+            }
+        }
+    ]
+
+}
+

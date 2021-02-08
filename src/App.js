@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Layout } from 'antd';
+
+import MapDrawer from "./components/extras/MapDrawer";
+import MainForm from "./components/page/MainForm";
+import MainMap from "./components/page/MainMap";
+import RegionInfo from "./components/page/RegionInfo";
+
+const { Footer, Content } = Layout;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Content>
+          <MapDrawer />
+          <RegionInfo />
+          <MainForm />
+          <MainMap />
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Map UI ©2021 Created using Ant Design</Footer>
+      </Layout>
     </div>
   );
 }

@@ -34,5 +34,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^4.4.0",
+    "@turf/turf": "^6.3.0",
+    "antd": "^4.12.2",
+    "leaflet": "^1.7.1",
+    "react-leaflet": "^2.8.0",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "styled-components": "^5.2.1",
+    "styled-theming": "^2.2.0"
   }
 }
