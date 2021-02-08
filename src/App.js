@@ -11,18 +11,12 @@ import RegionInfo from "./components/page/RegionInfo";
 const { Content } = Layout;
 
 function App(props) {
-  const [themeInUse, setThemeInUse] = useState("light");
   try{
     if(props.mentionendTheme.length !== 0){
       
       const lastItem = props.mentionendTheme[props.mentionendTheme.length - 1]
-      const _theme = lastItem.themeType
-      console.log(_theme)
-      if(_theme===true){
-        setThemeInUse("dark")
-      }else{
-        setThemeInUse("light")
-      }
+      const _theme = lastItem.themeTyp    
+      console.log(`Currently using ${_theme} theme.`)      
     }
     else{
       console.log("Page reloaded")
@@ -32,7 +26,6 @@ function App(props) {
     console.log("Theme problem buddy: "+error)
   }
 
-  console.log(`Currently using ${themeInUse} theme.`)
 
   return (
     <div className="App">
