@@ -12,8 +12,8 @@ body {
 .formContainer {
   position: absolute;
   z-index: 999;
-  background-color: #fff;
-  border-radius: 0px 10px 0px 10px;
+  background-color: #333;
+  border-radius: 10px;
   overflow: hidden;
   bottom: 1%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -39,10 +39,19 @@ body {
 .menuBtn {
   padding: 6px 20px;
   flex-direction: row;
+  background-color: #333;
+  color: #999;
   font-size: large;
   justify-content: center;
   border-radius: 10px 0 0 10px;
   border: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.menuBtn:hover {
+  background-color: #333;
+  color: #fff;
 }
 
 .profileCardContainer {
@@ -52,8 +61,12 @@ body {
 }
 
 .badgeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border-width: 1px !important;
   border-style: solid;
+  background-color: #222;
   border-radius: 20px;
 }
 

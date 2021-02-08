@@ -9,7 +9,7 @@ import { centroid } from "@turf/turf";
 
 let geoJsonFile = countries.features
 var centerPoint = {lat: 0.187542867288492, lng: 0.53097734781862}
-const ZOOM_LEVEL = 4;
+const ZOOM_LEVEL = 3;
 
 function MainMap(props) {
     const mapRef = useRef();
@@ -35,7 +35,7 @@ function MainMap(props) {
                 }
                 const { current = {} } = mapRef;
                 const { leafletElement:map } = current;
-                map.flyTo(newLatLong, ZOOM_LEVEL, {
+                map.flyTo(newLatLong, 4, {
                     duration: 2,
                 })
             }

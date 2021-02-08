@@ -26,7 +26,7 @@ function InfoCard({inputData}) {
             {inputData.length !== 0 &&
                 <Card
                 hoverable
-                style={{ width: "280px" }}
+                style={{ width: "280px", backgroundColor:"#333", color:"#eee" }}
                 >
                   
                 <Carousel autoplay>
@@ -42,29 +42,36 @@ function InfoCard({inputData}) {
                     )}
                 </Carousel>
                 <br/>
-                <p>
-                <Meta title={inputData.properties.COUNTRY_NAME} description={inputData.properties.COUNTRY_INFO} />
+                <p style={{color:"#eee", fontSize:"large"}}>
+                {inputData.properties.COUNTRY_NAME} 
                 </p>
-                <Button type="dashed" onClick={showDrawer}>
+                <p style={{color:"#eee"}}>
+                {inputData.properties.COUNTRY_INFO}
+                </p>
+                <Button type="dashed" style={{color:"#eee", backgroundColor:"#222"}} onClick={showDrawer}>
                     Show more info...
                 </Button>{" "}
-                <Button type="dashed"
+                <Button type="text" style={{color:"#888", backgroundColor:"#222"}}
                 className="infoContainerClose">
                 close...
                 </Button>  
                 <Drawer
                 placement="left"
                 closable={false}
+                bodyStyle={{
+                    backgroundColor:"#333",
+                    color:"#eee"
+                }}
                 onClose={onClose}
                 width={400}
                 visible={visible}
                 >
-                    <Tabs defaultActiveKey="1" onChange={callback}>
+                    <Tabs defaultActiveKey="1" onChange={callback} style={{color:"#fff"}}>
                         <TabPane tab="About" key="1">
                             <Typography>
-                                <Title level={4}>Country : {inputData.properties.COUNTRY_NAME}</Title>
+                                <Title level={4} style={{color:"#fff"}}>Country : {inputData.properties.COUNTRY_NAME}</Title>
                         
-                                <Paragraph>
+                                <Paragraph style={{color:"#eee"}}>
                                     <ul>
                                         <li>
                                         Country Currency - <strong>{inputData.properties.COUNTRY_CURRENCY}</strong>
@@ -83,9 +90,9 @@ function InfoCard({inputData}) {
                                         </li>
                                     </ul>
                                 </Paragraph>
-                                <Title level={4}>Facts about {inputData.properties.COUNTRY_NAME}</Title>
+                                <Title level={4} style={{color:"#eee"}}>Facts about {inputData.properties.COUNTRY_NAME}</Title>
                                 {inputData.properties.fact.map((object, i) => 
-                                    <Paragraph>
+                                    <Paragraph style={{color:"#fff"}}>
                                     {object}
                                     </Paragraph>
                                 )}
@@ -94,7 +101,7 @@ function InfoCard({inputData}) {
                         </TabPane>
                         <TabPane tab="Images" key="2" className="imagesTabContainer">
                             <Typography>
-                                <Title level={4}>Images of {inputData.properties.COUNTRY_NAME}</Title>
+                                <Title level={4} style={{color:"#eee"}}>Images of {inputData.properties.COUNTRY_NAME}</Title>
                             
                                 <Paragraph className="imagesContainer">
                                 <Image.PreviewGroup>

@@ -11,12 +11,17 @@ import RegionInfo from "./components/page/RegionInfo";
 const { Content } = Layout;
 
 function App(props) {
+  var webTheme = "light"
   try{
     if(props.mentionendTheme.length !== 0){
-      
       const lastItem = props.mentionendTheme[props.mentionendTheme.length - 1]
-      const _theme = lastItem.themeTyp    
-      console.log(`Currently using ${_theme} theme.`)      
+      const _theme = lastItem.themeType
+      if(_theme===true){
+        webTheme="dark"
+      }
+      else{
+        webTheme="light"
+      }
     }
     else{
       console.log("Page reloaded")
@@ -26,14 +31,15 @@ function App(props) {
     console.log("Theme problem buddy: "+error)
   }
 
+  console.log(`Currently using ${webTheme} theme.`)
 
   return (
     <div className="App">
       <Layout>
         <Content>
-          <MapDrawer />
-          <RegionInfo />
-          <MainForm />
+          <MapDrawer useTheme={webTheme} />
+          <RegionInfo useTheme={webTheme} />
+          <MainForm useTheme={webTheme} />
           <MainMap />
         </Content>
         {/* <Footer style={{ textAlign: 'center' }}>Map UI ©2021 Created using Ant Design</Footer> */}

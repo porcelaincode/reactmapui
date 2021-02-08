@@ -34,7 +34,7 @@ const MainForm = (props) => {
                 </Form.Item>
                 
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" style={{borderRadius: "5px"}}>
+                    <Button htmlType="submit" style={{borderRadius: "5px", backgroundColor:"#111", color:"#eee", borderColor:"#555"}}>
                         Search
                     </Button>
                 </Form.Item>
