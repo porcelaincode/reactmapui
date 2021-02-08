@@ -1,19 +1,24 @@
 import React, {useState} from 'react'
-import { Card, Carousel, Modal, Button, Typography, Image } from 'antd';
+import { Card, Carousel, Drawer, Button, Typography, Image, Tabs } from 'antd';
 
 const { Meta } = Card;
+const { TabPane } = Tabs;
 const { Title, Paragraph } = Typography;
+
+function callback(key) {
+    console.log(key);
+}
 
 function InfoCard({inputData}) {
 
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [visible, setVisible] = useState(false);
 
-    const showModal = () => {
-        setIsModalVisible(true);
+    const showDrawer = () => {
+        setVisible(true);
     };
 
-    const handleCancel = () => {
-        setIsModalVisible(false);
+    const onClose = () => {
+        setVisible(false);
     };
 
     return (
@@ -40,50 +45,72 @@ function InfoCard({inputData}) {
                 <p>
                 <Meta title={inputData.properties.COUNTRY_NAME} description={inputData.properties.COUNTRY_INFO} />
                 </p>
-                <Button type="dashed" onClick={showModal}>
+                <Button type="dashed" onClick={showDrawer}>
                     Show more info...
                 </Button>{" "}
                 <Button type="dashed"
                 className="infoContainerClose">
                 close...
                 </Button>  
-                <Modal 
-                title="Country Details" 
-                centered
-                visible={isModalVisible}
-                onCancel={handleCancel}
-                footer={false}
+                <Drawer
+                placement="left"
+                closable={false}
+                onClose={onClose}
+                width={400}
+                visible={visible}
                 >
-                    <Typography>
-                        <Title level={4}>Country : {inputData.properties.COUNTRY_NAME}</Title>
+                    <Tabs defaultActiveKey="1" onChange={callback}>
+                        <TabPane tab="About" key="1">
+                            <Typography>
+                                <Title level={4}>Country : {inputData.properties.COUNTRY_NAME}</Title>
                         
-                        <Paragraph>
-                            <ul>
-                                <li>
-                                Country Currency - <strong>{inputData.properties.COUNTRY_CURRENCY}</strong>
-                                </li>
-                                <li>
-                                Speed Unit - <strong>{inputData.properties.UNITS_SPEED}</strong>
-                                </li>
-                                <li>
-                                Distance Unit - <strong>{inputData.properties.UNITS_DISTANCE}</strong>
-                                </li>
-                                <li>
-                                Volume Unit - <strong>{inputData.properties.UNITS_VOLUME}</strong>
-                                </li>
-                                <li>
-                                Timezone - <strong>{inputData.properties.TIMEZONE}</strong>
-                                </li>
-                            </ul>
-                        </Paragraph>
-                        <Title level={4}>Facts about {inputData.properties.COUNTRY_NAME}</Title>
-                        {inputData.properties.fact.map((object, i) => 
-                            <Paragraph>
-                            {object}
-                            </Paragraph>
-                        )}
-                    </Typography>
-                </Modal>
+                                <Paragraph>
+                                    <ul>
+                                        <li>
+                                        Country Currency - <strong>{inputData.properties.COUNTRY_CURRENCY}</strong>
+                                        </li>
+                                        <li>
+                                        Speed Unit - <strong>{inputData.properties.UNITS_SPEED}</strong>
+                                        </li>
+                                        <li>
+                                        Distance Unit - <strong>{inputData.properties.UNITS_DISTANCE}</strong>
+                                        </li>
+                                        <li>
+                                        Volume Unit - <strong>{inputData.properties.UNITS_VOLUME}</strong>
+                                        </li>
+                                        <li>
+                                        Timezone - <strong>{inputData.properties.TIMEZONE}</strong>
+                                        </li>
+                                    </ul>
+                                </Paragraph>
+                                <Title level={4}>Facts about {inputData.properties.COUNTRY_NAME}</Title>
+                                {inputData.properties.fact.map((object, i) => 
+                                    <Paragraph>
+                                    {object}
+                                    </Paragraph>
+                                )}
+                            </Typography>
+                        
+                        </TabPane>
+                        <TabPane tab="Images" key="2" className="imagesTabContainer">
+                            <Typography>
+                                <Title level={4}>Images of {inputData.properties.COUNTRY_NAME}</Title>
+                            
+                                <Paragraph className="imagesContainer">
+                                <Image.PreviewGroup>
+                                {inputData.properties.images.map((object, i) => 
+                                    
+                                    <Image
+                                      width="100%"
+                                      src={object}
+                                    />
+                                )}
+                                </Image.PreviewGroup>
+                                </Paragraph>
+                            </Typography>
+                        </TabPane>
+                    </Tabs>
+                </Drawer>
             </Card>
             }
             </div>

@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { connect } from "react-redux";
+import { toggleTheme } from "../../actions";
 import { Drawer, Button, Switch, Typography, Divider } from 'antd';
 
 import ProfileCard from './ProfileCard';
@@ -19,6 +21,7 @@ function MapDrawer(props) {
 
     function onChange(checked) {
         console.log(`switched to ${checked}`)
+        props.dispatch(toggleTheme(checked));
     }
       
     return (
@@ -62,4 +65,4 @@ function MapDrawer(props) {
     )
 }
 
-export default MapDrawer
+export default connect()(MapDrawer)

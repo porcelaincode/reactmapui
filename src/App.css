@@ -21,19 +21,10 @@ body {
   margin: 1em;
 }
 
-.searchBtn {
-  background-color: dodgerblue;
-  color: white;
-  border: none;
-  height: 2em;
-  border-radius: 2px;
-}
-
 .infoContainer {
   position: absolute;
   z-index: 999;
   text-align: center;
-  background-color: white;
   bottom: 7%;
   margin: 1em;
 }
@@ -64,4 +55,18 @@ body {
   border-width: 1px !important;
   border-style: solid;
   border-radius: 20px;
+}
+
+.imagesMainContainer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
